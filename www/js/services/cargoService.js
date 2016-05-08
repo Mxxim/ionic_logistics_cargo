@@ -41,7 +41,10 @@ define([],function(){
         price = weight * 200 + 0.85 * dis * weight;
       }
 
-      return price.toFixed(2);
+      return {
+        price:price.toFixed(2),
+        distance:dis
+      };
 
     };
 

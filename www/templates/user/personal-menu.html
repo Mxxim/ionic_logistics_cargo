@@ -8,14 +8,14 @@
       <br>
       <ion-list>
         <ion-item  ng-if="userInfo&&!userInfo.ifAuth" menu-toggle class="item-avatar" style="border:none" href="#/menu/authentication">
-          <img ng-if="userInfo.userImage" src="{{userInfo.userImage}}" alt="" width="35">
+          <img ng-if="userInfo.userImage" src="{{api}}{{userInfo.userImage}}" alt="" width="35">
           <img ng-if="!userInfo.userImage" src="img/commentfailure.png" alt="" width="35">
           <h2 ng-if="userInfo.realName" class="title">{{userInfo.realName}}</h2>
           <h2 ng-if="!userInfo.realName" class="title">{{userInfo.username}}</h2>
           <p style="color:#cccccc">货主未认证</p>
         </ion-item>
         <ion-item  ng-if="userInfo&&userInfo.ifAuth" menu-toggle class="item-avatar" style="border:none">
-          <img ng-if="userInfo.userImage" src="{{userInfo.userImage}}" alt="" width="35">
+          <img ng-if="userInfo.userImage" src="{{api}}{{userInfo.userImage}}" alt="" width="35">
           <img ng-if="!userInfo.userImage" src="img/commentfailure.png" alt="" width="35">
           <h2 ng-if="userInfo.realName" class="title">{{userInfo.realName}}</h2>
           <h2 ng-if="!userInfo.realName" class="title">{{userInfo.username}}</h2>

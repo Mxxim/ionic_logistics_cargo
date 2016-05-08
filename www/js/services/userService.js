@@ -52,7 +52,7 @@ define([],function(){
     function signup(user){
       return $q(function(resolve,reject){
 
-        if(user.username == "" || user.password == "" || user.re_password == ""){
+        if(user.username == "" || user.password == "" || user.re_password == "" ||  user.realName == ""){
           reject({message:"不能为空"});
         }else if(user.password != user.re_password){
           reject({message:"密码不一致"});
@@ -61,12 +61,7 @@ define([],function(){
             save : {
               method:"POST"
             }
-          }).save({
-            username: user.username,
-            password: user.password,
-            re_password: user.re_password,
-            type:user.type
-          }, function(response) {
+          }).save(user, function(response) {
             resolve(response);
           });
         }

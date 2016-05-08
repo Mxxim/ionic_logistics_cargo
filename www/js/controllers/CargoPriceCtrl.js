@@ -23,7 +23,9 @@ define([],function(){
     // 初始化页面数据
     BaiduMapService.getDistance(pointA,pointB).then(function(data){
       _this.showloading = false;
-      cargo.price = cargoService.getPrice(data.distance,cargo.load);
+      var obj = cargoService.getPrice(data.distance,cargo.load);
+      cargo.price = obj.price;
+      cargo.distance = obj.distance;
       _this.distance = data.distance;
       _this.cargo = cargo;
     });

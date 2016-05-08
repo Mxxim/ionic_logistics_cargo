@@ -16,6 +16,7 @@ define([],function(){
 
     _this.user = {
       username:"",
+      realName:"",
       password:"",
       re_password:"",
       type:""

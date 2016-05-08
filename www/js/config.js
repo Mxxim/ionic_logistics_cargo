@@ -20,6 +20,6 @@ angular.module('starter.config',[])
           authentication:'/user/authentication',
           getById:'/user/getById',
           cargoAdd:'/cargo/add',
-          cargoList:'/cargo/getList'
+          cargoList:'/cargo/getListById'
         }
     })
