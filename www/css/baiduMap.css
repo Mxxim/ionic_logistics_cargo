@@ -1,0 +1,10 @@
+#l-map{height:300px;width:100%;}
+#r-result,#r-result table{width:100%;}
+
+
+.tangram-suggestion-main{
+  z-index:9999;
+}
+
+/* 驾车路线 */
+#allmap{height:500px;width:100%;}

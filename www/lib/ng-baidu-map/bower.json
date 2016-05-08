@@ -1,0 +1,16 @@
+{
+  "name": "ng-baidu-map",
+  "version": "1.0.10",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "main": "dist/angular-baidu-map.min.js",
+  "dependencies": {
+    "angular": "^1.2.0"
+  }
+}

@@ -1,0 +1,50 @@
+<ion-view view-title="用户认证" cache-view="false">
+
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-title>用户认证</ion-nav-title>
+    <ion-nav-buttons side="left">
+      <button class="button  back-button button-icon ion-ios-arrow-back button-clear" ng-click="$ionicGoBack()">发货源</button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+
+  <ion-content class="bg-e4 has-header">
+    <form enctype="multipart/form-data">
+      <div class="list user_auth">
+        <div class="item">
+          <div style="font-size:14px;color:#A7A3A3;margin-bottom:10px;"><i class="iconfont">&#xe615;&nbsp;</i>认证用户可以更快获得车主回应哦！</div>
+          <div class="wrap" id="carCard">
+            <p>身份证正面</p>
+            <div class="auth_img" ng-click="user.showActionSheet(0)">
+              <img ng-if="user.image.IDCard" ng-src="{{user.image.IDCard}}"/>
+              <img ng-if="!user.image.IDCard" ng-src="../www/img/IDCard.png"/>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="wrap">
+            <p>身份证背面</p>
+            <div class="auth_img" ng-click="user.showActionSheet(1)">
+              <img ng-if="user.image.IDCardBack" ng-src="{{user.image.IDCardBack}}"/>
+              <img ng-if="!user.image.IDCardBack" ng-src="../www/img/IDCardBack.png"/>
+            </div>
+          </div>
+        </div>
+      <div class="item">
+        <div class="wrap">
+          <p>个人近照</p>
+          <div class="auth_img" ng-click="user.showActionSheet(2)">
+            <img ng-if="user.image.userImage" ng-src="{{user.image.userImage}}"/>
+            <img ng-if="!user.image.userImage" ng-src="../www/img/userImage.jpg"/>
+          </div>
+        </div>
+      </div>
+      </div>
+    </form>
+    <div class="padding">
+      <input type="submit" class="button button-block button-positive" ng-click="user.authentication(user.image)" value="提交"/>
+      <!--<input type="submit" class="button button-block button-positive" value="提交"/>-->
+    </div>
+  </ion-content>
+</ion-view>
+

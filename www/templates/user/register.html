@@ -1,0 +1,22 @@
+<ion-view view-title="注册">
+
+  <ion-content scroll="false" class="login_content">
+
+    <ion-nav-buttons side="left">
+      <button class="button  back-button button-icon ion-ios-arrow-back button-clear" ng-click="$ionicGoBack()"></button>
+    </ion-nav-buttons>
+    <div class="login_content_div">
+      <div class="text-center">
+        <h2 style="color: #464444">物流配送货主端</h2>
+      </div>
+      <div class="list">
+        <ion-md-input placeholder="手机号码" highlight-color="balanced" type="tel" ng-model="user.user.username"></ion-md-input>
+        <ion-md-input placeholder="密码" highlight-color="energized" type="password" ng-model="user.user.password"></ion-md-input>
+        <ion-md-input placeholder="确认密码" highlight-color="energized" type="password" ng-model="user.user.re_password"></ion-md-input>
+      </div>
+      <div class="padding">
+        <button class="button button-full button-assertive" ng-click="user.signup(1)">注册</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

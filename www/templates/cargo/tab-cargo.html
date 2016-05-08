@@ -1,0 +1,75 @@
+<ion-view view-title="发货源" hide-back-button="true">
+  <ion-nav-title>
+    发布货源
+  </ion-nav-title>
+  <!--<ion-nav-buttons side="right">-->
+    <!--<a href="#/menu/tabs/cargo/search">-->
+      <!--<button class="button button-icon icon ion-ios-search"></button>-->
+    <!--</a>-->
+  <!--</ion-nav-buttons>-->
+  <ion-content class="has-header">
+
+    <!--<baidu-map style="height:400px;width:100%"></baidu-map>-->
+    <div class="list list-inset search_list">
+      <div class="item">
+        <i class="iconfont balanced"> &#xe60a;&nbsp;</i>
+        <search-addr selectvalue="from" placeholder="请输入装货地" suggestid="from"></search-addr>
+        <!--<span ng-click="unfold()" class="add_def">-->
+          <!--<span ng-if="cityFrom.Province === ''">输入装货地</span>-->
+           <!--<span ng-if="cityFrom.Province != ''">-->
+            <!--{{cityFrom.Province}} {{cityFrom.City}} {{cityFrom.County}}-->
+          <!--</span>-->
+        <!--</span>-->
+        <!--&lt;!&ndash; 这里加上$parent才能把子scope的值绑定到父scope上，当点击提交的时候才能输出cityFrom &ndash;&gt;-->
+        <!--<select-city selectvalue='$parent.cityFrom' ng-show="open"></select-city>-->
+      </div>
+      <!--<select-city selectvalue='cityFrom'></select-city>-->
+      <div class="item">
+        <i class="iconfont assertive">&#xe60b;&nbsp;</i>
+        <search-addr selectvalue="to" placeholder="请输入卸货地" suggestid="to"></search-addr>
+        <!--<span ng-click="unfold()" class="add_def">-->
+          <!--<span ng-if="cityTo.Province === ''">输入卸货地</span>-->
+          <!--<span ng-if="cityTo.Province != ''">-->
+            <!--{{cityTo.Province}} {{cityTo.City}} {{cityTo.County}}-->
+          <!--</span>-->
+        <!--</span>-->
+        <!--<select-city selectvalue='$parent.cityTo' ng-show="open"></select-city>-->
+      </div>
+      <div class="item">
+        <i class="ion-ios-clock positive"></i>&nbsp;
+        <select-date selectvalue='dateTo' class="add_def"></select-date>
+      </div>
+      <div class="item">
+        <i class="ion-cube positive"></i>&nbsp;
+        <input type="text" ng-model="cargo.cargo.name" placeholder="输入货品名称"/>
+        <input type="number" style="width:60px;" ng-model="cargo.cargo.load" placeholder="输入重量"/>吨
+      </div>
+      <div class="item">
+        <i class="iconfont calm">&#xe608;&nbsp;</i>
+        <div style="display:inline-block">
+          <select id="sel_type" class="add_def" ng-model="cargo.cargo.lorryType">
+            <option selected value="">选择车辆类型</option>
+            <option value="{{type}}" ng-repeat="type in cargo.lorryType">{{type}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="item">
+        <i class="iconfont positive">&#xe608;&nbsp;</i>
+        <div style="display:inline-block">
+          <select id="sel_len" class="add_def" ng-model="cargo.cargo.lorryLength">
+            <option selected value="">选择车辆长度</option>
+            <option value="{{len}}" ng-repeat="len in cargo.lorryLength">{{len}}米</option>
+            <option value="不限车长">不限车长</option>
+          </select>
+        </div>
+      </div>
+      <div class="item">
+        <input type="text" style="width: 100%" placeholder="备注（可不填）" ng-model="cargo.cargo.text"/>
+      </div>
+    </div>
+    <div class="padding">
+      <button class="button button-block button-positive" ng-click="cargo.add(from,to,dateTo,cargo.cargo)">发布货源</button>
+    </div>
+  </ion-content>
+  <!-- ion-content end -->
+</ion-view>

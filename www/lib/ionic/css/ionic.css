@@ -3811,35 +3811,35 @@ a.subdued {
   .action-sheet-open .action-sheet-backdrop {
     pointer-events: auto; }
 
-.platform-android .action-sheet-backdrop.active {
-  background-color: rgba(0, 0, 0, 0.2); }
+/*.platform-android .action-sheet-backdrop.active {*/
+  /*background-color: rgba(0, 0, 0, 0.2); }*/
 
-.platform-android .action-sheet {
-  margin: 0; }
-  .platform-android .action-sheet .action-sheet-title,
-  .platform-android .action-sheet .button {
-    text-align: left;
-    border-color: transparent;
-    font-size: 16px;
-    color: inherit; }
-  .platform-android .action-sheet .action-sheet-title {
-    font-size: 14px;
-    padding: 16px;
-    color: #666; }
-  .platform-android .action-sheet .button.active,
-  .platform-android .action-sheet .button.activated {
-    background: #e8e8e8; }
+/*.platform-android .action-sheet {*/
+  /*margin: 0; }*/
+  /*.platform-android .action-sheet .action-sheet-title,*/
+  /*.platform-android .action-sheet .button {*/
+    /*text-align: left;*/
+    /*border-color: transparent;*/
+    /*font-size: 16px;*/
+    /*color: inherit; }*/
+  /*.platform-android .action-sheet .action-sheet-title {*/
+    /*font-size: 14px;*/
+    /*padding: 16px;*/
+    /*color: #666; }*/
+  /*.platform-android .action-sheet .button.active,*/
+  /*.platform-android .action-sheet .button.activated {*/
+    /*background: #e8e8e8; }*/
 
-.platform-android .action-sheet-group {
-  margin: 0;
-  border-radius: 0;
-  background-color: #fafafa; }
+/*.platform-android .action-sheet-group {*/
+  /*margin: 0;*/
+  /*border-radius: 0;*/
+  /*background-color: #fafafa; }*/
 
-.platform-android .action-sheet-cancel {
-  display: none; }
+/*.platform-android .action-sheet-cancel {*/
+  /*display: none; }*/
 
-.platform-android .action-sheet-has-icons .button {
-  padding-left: 56px; }
+/*.platform-android .action-sheet-has-icons .button {*/
+  /*padding-left: 56px; }*/
 
 .backdrop {
   position: fixed;

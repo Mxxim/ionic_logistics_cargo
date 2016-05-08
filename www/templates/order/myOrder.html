@@ -1,0 +1,450 @@
+<ion-view hide-tabs view-title="全部记录">
+
+  <ion-nav-title>全部记录</ion-nav-title>
+  <ion-nav-buttons side="left">
+    <button class="button  back-button button-icon ion-ios-arrow-back button-clear" ng-click="$ionicGoBack()"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button  back-button button-icon ion-more button-clear" ng-click=""></button>
+  </ion-nav-buttons>
+  <ion-tabs class="tabs-striped tabs-top tabs-color-positive">
+
+    <ion-tab title="已完成">
+      <ion-view>
+        <ion-content style="top: 95px;">
+            <!--<div class="list card order_list" ng-click="order.toDetail()">-->
+              <!--<div class="item">-->
+              <!--<span class="positive-bg light">-->
+                <!--2016-04-18 装-->
+              <!--</span>-->
+                <!--<span class="detail">饮料 25吨</span>-->
+              <!--</div>-->
+              <!--<div class="item_wrap">-->
+                <!--<div class="item">-->
+                  <!--<p>-->
+                    <!--<i class="iconfont balanced">&#xe60a;</i>-->
+                    <!--<span>湛江市麻章区湖光岩东广东海洋大学</span>-->
+                  <!--</p>-->
+                <!--</div>-->
+                <!--<div class="item">-->
+                  <!--<i class="iconfont">&#xe61b;</i>-->
+                <!--</div>-->
+                <!--<div class="item">-->
+                  <!--<p>-->
+                    <!--<i class="iconfont assertive">&#xe60b;</i>-->
+                    <!--<span>广州市越秀区广东外语外贸大学</span>-->
+                  <!--</p>-->
+                <!--</div>-->
+              <!--</div>-->
+
+              <!--<div class="item item_detail padding">-->
+                <!--<span class="detail">17.5米 平板车</span>-->
+              <!--</div>-->
+              <!--<div class="item item_detail">-->
+                <!--<span class="detail_price">￥1300</span><span class="detail">收益：</span>-->
+              <!--</div>-->
+              <!--&lt;!&ndash;<div class="item flex_row_reverse">&ndash;&gt;-->
+                <!--&lt;!&ndash;<button class="button button-outline button-positive button-small">查看物流</button>&ndash;&gt;-->
+                <!--&lt;!&ndash;<button class="button button-outline button-assertive button-small" >申请退单</button>&ndash;&gt;-->
+              <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--</div>-->
+
+          <!--<div class="list card order_list" ng-click="order.toDetail()">-->
+            <!--<div class="item">-->
+              <!--<span class="positive-bg light">-->
+                <!--2016-04-18 装-->
+              <!--</span>-->
+              <!--<span class="detail">饮料 25吨</span>-->
+            <!--</div>-->
+            <!--<div class="item_wrap">-->
+              <!--<div class="item">-->
+                <!--<p>-->
+                  <!--<i class="iconfont balanced">&#xe60a;</i>-->
+                  <!--<span>湛江市麻章区湖光岩东广东海洋大学</span>-->
+                <!--</p>-->
+              <!--</div>-->
+              <!--<div class="item">-->
+                <!--<i class="iconfont">&#xe61b;</i>-->
+              <!--</div>-->
+              <!--<div class="item">-->
+                <!--<p>-->
+                  <!--<i class="iconfont assertive">&#xe60b;</i>-->
+                  <!--<span>广州市越秀区广东外语外贸大学</span>-->
+                <!--</p>-->
+              <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="item item_detail padding">-->
+              <!--<span class="detail">17.5米 平板车</span>-->
+            <!--</div>-->
+            <!--<div class="item item_detail">-->
+              <!--<span class="detail_price">￥1300</span><span class="detail">收益：</span>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<div class="item flex_row_reverse">&ndash;&gt;-->
+            <!--&lt;!&ndash;<button class="button button-outline button-positive button-small">查看物流</button>&ndash;&gt;-->
+            <!--&lt;!&ndash;<button class="button button-outline button-assertive button-small" >申请退单</button>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--</div>-->
+          <ion-refresher on-refresh="doRefresh()" pulling-icon="ion-load-d" spinner="ios-small"></ion-refresher>
+          <ul class="timeline">
+            <li>
+              <div class="timeline-thumb bg-color-blue timeline-text">
+                <!--<i class="ion-heart"></i>-->
+                <p>5月</p>
+              </div>
+              <div  style="height: 50px;"></div>
+            </li>
+            <li>
+              <div class="timeline-thumb bg-color-blue timeline-point">
+                <!--<i class="ion-heart"></i>-->
+                <!--<p>5月</p>-->
+              </div>
+              <div class="timeline-item">
+                <h5 class="assertive">收 ￥1300 元</h5>
+                <p>
+                  <i class="iconfont">&#xe60a;</i>
+                  湛江市麻章区湖光岩东广东海洋大学
+                </p>
+                <p>
+                  <i class="iconfont">&#xe60b;</i>
+                  广州市越秀区广东外语外贸大学
+                </p>
+                <div class="timeline-stats">
+                  <i class="iconfont">&#xe60f;</i> 饮料 25吨
+                  <span class="pos-absolute-right"><i class="ion-ios-clock"></i> 2016-05-01</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="timeline-thumb bg-color-blue timeline-point">
+
+
+              </div>
+              <div class="timeline-item">
+                <h5 class="assertive">收 ￥1350 元</h5>
+                <p>
+                  <i class="iconfont">&#xe60a;</i>
+                  湛江市麻章区湖光岩东广东海洋大学
+                </p>
+                <p>
+                  <i class="iconfont">&#xe60b;</i>
+                  广州市越秀区广东外语外贸大学
+                </p>
+                <div class="timeline-stats">
+                  <i class="iconfont">&#xe60f;</i> 饮料 25吨
+                  <span class="pos-absolute-right"><i class="ion-ios-clock"></i> 2016-05-02</span>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="timeline-thumb bg-color-blue timeline-text">
+                <!--<i class="ion-heart"></i>-->
+                <p>4月</p>
+              </div>
+             <div style="height: 50px;"></div>
+            </li>
+            <li>
+              <div class="timeline-thumb bg-color-blue timeline-point">
+                <!--<i class="ion-heart"></i>-->
+                <!--<p>4月</p>-->
+              </div>
+              <div class="timeline-item">
+                <h5 class="assertive">收 ￥1300 元</h5>
+                <p>
+                  <i class="iconfont">&#xe60a;</i>
+                  湛江市麻章区湖光岩东广东海洋大学
+                </p>
+                <p>
+                  <i class="iconfont">&#xe60b;</i>
+                  广州市越秀区广东外语外贸大学
+                </p>
+                <div class="timeline-stats">
+                  <i class="iconfont">&#xe60f;</i> 饮料 25吨
+                  <span class="pos-absolute-right"><i class="ion-ios-clock"></i> 2016-04-01</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="divider-title">2015年</div>
+          <ul class="timeline">
+            <li>
+              <div class="timeline-thumb bg-color-blue timeline-text">
+                <p>12月</p>
+              </div>
+              <div style="height: 50px;"></div>
+            </li>
+            <li>
+              <div class="timeline-thumb bg-color-blue timeline-point">
+                <!--<i class="ion-heart"></i>-->
+                <!--<p>4月</p>-->
+              </div>
+              <div class="timeline-item">
+                <h5 class="assertive">收 ￥2300 元</h5>
+                <p>
+                  <i class="iconfont">&#xe60a;</i>
+                  湛江市麻章区湖光岩东广东海洋大学
+                </p>
+                <p>
+                  <i class="iconfont">&#xe60b;</i>
+                  广州市越秀区广东外语外贸大学
+                </p>
+                <div class="timeline-stats">
+                  <i class="iconfont">&#xe60f;</i> 饮料 25吨
+                  <span class="pos-absolute-right"><i class="ion-ios-clock"></i> 2015-12-10</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+        </ion-content>
+      </ion-view>
+    </ion-tab>
+
+    <ion-tab title="配送中" badge="2" badge-style="badge-assertive">
+      <ion-view>
+        <ion-content style="top: 95px;">
+          <div class="list card order_list" ng-click="order.toDetail()">
+            <div class="item">
+              <span class="assertive-bg light">
+                2016-04-18 装
+              </span>
+              <span class="detail">饮料 25吨</span>
+            </div>
+            <div class="item_wrap">
+              <div class="item">
+                <p>
+                  <i class="iconfont balanced">&#xe60a;</i>
+                  <span>湛江市麻章区湖光岩东广东海洋大学</span>
+                </p>
+              </div>
+              <div class="item">
+                <i class="iconfont">&#xe61b;</i>
+              </div>
+              <div class="item">
+                <p>
+                  <i class="iconfont assertive">&#xe60b;</i>
+                  <span>广州市越秀区广东外语外贸大学</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="item item_detail padding">
+              <span class="detail">17.5米 平板车</span>
+            </div>
+            <div class="item item_detail">
+              <span class="detail_price">￥1300</span>
+            </div>
+            <div class="item flex_row_reverse">
+              <button class="button button-outline button-positive button-small">查看物流</button>
+              <button class="button button-outline button-assertive button-small" >申请退单</button>
+            </div>
+          </div>
+
+          <div class="list card order_list" ng-click="order.toDetail()">
+            <div class="item">
+              <span class="assertive-bg light">
+                2016-04-18 装
+              </span>
+              <span class="detail">饮料 25吨</span>
+            </div>
+            <div class="item_wrap">
+              <div class="item">
+                <p>
+                  <i class="iconfont balanced">&#xe60a;</i>
+                  <span>湛江市麻章区湖光岩东广东海洋大学</span>
+                </p>
+              </div>
+              <div class="item">
+                <i class="iconfont">&#xe61b;</i>
+              </div>
+              <div class="item">
+                <p>
+                  <i class="iconfont assertive">&#xe60b;</i>
+                  <span>广州市越秀区广东外语外贸大学</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="item item_detail padding">
+              <span class="detail">17.5米 平板车</span>
+            </div>
+            <div class="item item_detail">
+              <span class="detail_price">￥1300</span>
+            </div>
+            <div class="item flex_row_reverse">
+              <button class="button button-outline button-positive button-small">查看物流</button>
+              <button class="button button-outline button-assertive button-small" >申请退单</button>
+            </div>
+          </div>
+        </ion-content>
+      </ion-view>
+    </ion-tab>
+
+    <ion-tab title="待交易">
+      <ion-view>
+        <ion-content style="top: 95px;">
+          <div class="list card order_list" ng-click="order.toDetail()">
+            <div class="item">
+              <span class="dark-bg light">
+                2016-04-18 装
+              </span>
+              <span class="detail">饮料 25吨</span>
+            </div>
+            <div class="item_wrap">
+              <div class="item">
+                <p>
+                  <i class="iconfont balanced">&#xe60a;</i>
+                  <span>湛江市麻章区湖光岩东广东海洋大学</span>
+                </p>
+              </div>
+              <div class="item">
+                <i class="iconfont">&#xe61b;</i>
+              </div>
+              <div class="item">
+                <p>
+                  <i class="iconfont assertive">&#xe60b;</i>
+                  <span>广州市越秀区广东外语外贸大学</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="item item_detail padding">
+              <span>￥1300</span>
+              <span class="detail">17.5米 平板车</span>
+            </div>
+            <div class="item item_detail">
+              <span class="assertive">取消理由：临时变更</span>
+            </div>
+            <!--<div class="item flex_row_reverse">-->
+            <!--<button class="button button-outline button-positive button-small">查看物流</button>-->
+            <!--<button class="button button-outline button-assertive button-small" >申请退单</button>-->
+            <!--</div>-->
+          </div>
+
+          <div class="list card order_list" ng-click="order.toDetail()">
+            <div class="item">
+              <span class="dark-bg light">
+                2016-04-18 装
+              </span>
+              <span class="detail">饮料 25吨</span>
+            </div>
+            <div class="item_wrap">
+              <div class="item">
+                <p>
+                  <i class="iconfont balanced">&#xe60a;</i>
+                  <span>湛江市麻章区湖光岩东广东海洋大学</span>
+                </p>
+              </div>
+              <div class="item">
+                <i class="iconfont">&#xe61b;</i>
+              </div>
+              <div class="item">
+                <p>
+                  <i class="iconfont assertive">&#xe60b;</i>
+                  <span>广州市越秀区广东外语外贸大学</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="item item_detail padding">
+              <span>￥1300</span>
+              <span class="detail">17.5米 平板车</span>
+            </div>
+            <div class="item item_detail">
+              <span class="assertive">取消理由：临时变更</span>
+            </div>
+            <!--<div class="item flex_row_reverse">-->
+            <!--<button class="button button-outline button-positive button-small">查看物流</button>-->
+            <!--<button class="button button-outline button-assertive button-small" >申请退单</button>-->
+            <!--</div>-->
+          </div>
+        </ion-content>
+      </ion-view>
+    </ion-tab>
+
+    <ion-tab title="已取消">
+      <ion-view>
+        <ion-content style="top: 95px;">
+          <div class="list card order_list" ng-click="order.toDetail()">
+            <div class="item">
+              <span class="dark-bg light">
+                2016-04-18 装
+              </span>
+              <span class="detail">饮料 25吨</span>
+            </div>
+            <div class="item_wrap">
+              <div class="item">
+                <p>
+                  <i class="iconfont balanced">&#xe60a;</i>
+                  <span>湛江市麻章区湖光岩东广东海洋大学</span>
+                </p>
+              </div>
+              <div class="item">
+                <i class="iconfont">&#xe61b;</i>
+              </div>
+              <div class="item">
+                <p>
+                  <i class="iconfont assertive">&#xe60b;</i>
+                  <span>广州市越秀区广东外语外贸大学</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="item item_detail padding">
+              <span>￥1300</span>
+              <span class="detail">17.5米 平板车</span>
+            </div>
+            <div class="item item_detail">
+              <span class="assertive">取消理由：临时变更</span>
+            </div>
+            <!--<div class="item flex_row_reverse">-->
+              <!--<button class="button button-outline button-positive button-small">查看物流</button>-->
+              <!--<button class="button button-outline button-assertive button-small" >申请退单</button>-->
+            <!--</div>-->
+          </div>
+
+          <div class="list card order_list" ng-click="order.toDetail()">
+            <div class="item">
+              <span class="dark-bg light">
+                2016-04-18 装
+              </span>
+              <span class="detail">饮料 25吨</span>
+            </div>
+            <div class="item_wrap">
+              <div class="item">
+                <p>
+                  <i class="iconfont balanced">&#xe60a;</i>
+                  <span>湛江市麻章区湖光岩东广东海洋大学</span>
+                </p>
+              </div>
+              <div class="item">
+                <i class="iconfont">&#xe61b;</i>
+              </div>
+              <div class="item">
+                <p>
+                  <i class="iconfont assertive">&#xe60b;</i>
+                  <span>广州市越秀区广东外语外贸大学</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="item item_detail padding">
+              <span>￥1300</span>
+              <span class="detail">17.5米 平板车</span>
+            </div>
+            <div class="item item_detail">
+              <span class="assertive">取消理由：临时变更</span>
+            </div>
+            <!--<div class="item flex_row_reverse">-->
+            <!--<button class="button button-outline button-positive button-small">查看物流</button>-->
+            <!--<button class="button button-outline button-assertive button-small" >申请退单</button>-->
+            <!--</div>-->
+          </div>
+        </ion-content>
+      </ion-view>
+    </ion-tab>
+
+
+  </ion-tabs>
+</ion-view>
+

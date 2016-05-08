@@ -1,0 +1,53 @@
+<ion-view view-title="确认货源" cache-view="false">
+  <ion-nav-title>
+    确认货源
+  </ion-nav-title>
+  <!--<ion-nav-buttons side="right">-->
+  <!--<a href="#/menu/tabs/cargo/search">-->
+  <!--<button class="button button-icon icon ion-ios-search"></button>-->
+  <!--</a>-->
+  <!--</ion-nav-buttons>-->
+  <ion-content class="has-header">
+
+    <div id="l-map"></div>
+
+    <div class="isLoading" ng-if="cargoPrice.showloading">
+      <ion-spinner icon="bubbles" ></ion-spinner>
+      <div>正在计算运费&nbsp;</div>
+    </div>
+    <div class="card" style="margin-bottom:10px" ng-if="!cargoPrice.showloading">
+      <div class="row">
+        <div class="col"><span class="add_def">装货地：</span>{{cargoPrice.cargo.from}}</div>
+      </div>
+      <div class="row">
+        <div class="col"><span class="add_def">卸货地：</span>{{cargoPrice.cargo.to}}</div>
+      </div>
+      <div class="row">
+        <div class="col col-28"><span class="add_def">货品：</span>{{cargoPrice.cargo.name}}</div>
+        <div class="col col-30"><span class="add_def">重量：</span>{{cargoPrice.cargo.load}}吨</div>
+        <div class="col col-42"><span class="add_def">时间：</span>{{cargoPrice.cargo.dateTime}}</div>
+      </div>
+      <div class="row">
+        <div class="col col-28"><span class="add_def">车长：</span>{{cargoPrice.cargo.lorryLength}}米</div>
+        <div class="col col-30"><span class="add_def">车型：</span>{{cargoPrice.cargo.lorryType}}</div>
+        <div class="col col-42"><span class="add_def">备注：</span>{{cargoPrice.cargo.text}}</div>
+      </div>
+      <div>
+        <div class="row">
+          <div class="col color-orange">
+            <span class="add_def">估计里程：</span>{{cargoPrice.distance}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col color-orange">
+            <span class="add_def">费用：</span>{{cargoPrice.cargo.price}}元
+          </div>
+        </div>
+      </div>
+
+    <div class="padding" style="padding-top:5px">
+      <button class="button button-block button-positive" ng-click="cargoPrice.publish(cargoPrice.cargo)">确认发布</button>
+    </div>
+  </ion-content>
+  <!-- ion-content end -->
+</ion-view>
