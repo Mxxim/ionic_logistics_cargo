@@ -42,10 +42,10 @@ define([],function(){
     var postData = {};
 
 
-    var us = storageService.get(storageKey);
-    if(us != undefined){
-      $rootScope.userInfo =us;
-    }
+    //var us = storageService.get(storageKey);
+    //if(us != undefined){
+    //  $rootScope.userInfo =us;
+    //}
     $rootScope.hideTabs = ' ';
 
 

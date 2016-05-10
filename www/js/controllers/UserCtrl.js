@@ -35,7 +35,8 @@ define([],function(){
             });
           }else{
             storageService.set(storageKey,res.user);
-            $rootScope.userInfo = storageService.get(storageKey);
+            $rootScope.userInfo = res.user;
+            $rootScope.isLogin = true;
             $state.go('menu.tabs.cargo');  //路由跳转
           }
 
@@ -81,7 +82,7 @@ define([],function(){
               duration: 1500
             });
           }else{
-            $state.go('menu.login');  //路由跳转
+            $state.go('menu.tabs.login');  //路由跳转
           }
 
         },function(res){

@@ -7,7 +7,7 @@
     <ion-content style="box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3)">
       <br>
       <ion-list>
-        <ion-item  ng-if="userInfo&&!userInfo.ifAuth" menu-toggle class="item-avatar" style="border:none" href="#/menu/authentication">
+        <ion-item  ng-if="userInfo&&!userInfo.ifAuth" menu-toggle class="item-avatar" style="border:none" href="#/menu/tabs/authentication">
           <img ng-if="userInfo.userImage" src="{{api}}{{userInfo.userImage}}" alt="" width="35">
           <img ng-if="!userInfo.userImage" src="img/commentfailure.png" alt="" width="35">
           <h2 ng-if="userInfo.realName" class="title">{{userInfo.realName}}</h2>
@@ -21,12 +21,12 @@
           <h2 ng-if="!userInfo.realName" class="title">{{userInfo.username}}</h2>
           <p style="color:#cccccc">已认证</p>
         </ion-item>
-        <ion-item  ng-if="!userInfo" menu-toggle class="item-avatar" style="border:none" href="#/menu/login">
+        <ion-item  ng-if="!userInfo" menu-toggle class="item-avatar" style="border:none" href="#/menu/tabs/login">
           <img src="img/commentfailure.png" alt="" width="35">
           <p style="color:#cccccc">未登陆</p>
         </ion-item>
         <br>
-        <ion-item  menu-toggle class="item-icon-left" href="#/menu/cargoList">
+        <ion-item  menu-toggle class="item-icon-left" href="#/menu/tabs/cargoList">
           <i class="icon ion-ios-box assertive"></i>
           我的货源
         </ion-item><br>
@@ -44,7 +44,7 @@
           我的评价
         </ion-item><br>
         <!--<ion-item menu-close href="">我的广场</ion-item>-->
-        <ion-item  menu-toggle class="item-icon-left" href="#/menu/settings">
+        <ion-item  menu-toggle class="item-icon-left" href="#/menu/tabs/settings">
           <i class="icon ion-gear-b positive"></i>
           设置
         </ion-item>

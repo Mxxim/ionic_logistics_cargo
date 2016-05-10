@@ -20,21 +20,28 @@ define([],function(){
     var  user = storageService.get(storageKey);
     var userID;
 
-    $scope.$on("$ionicView.beforeEnter", function(event, data){
-      // handle event
-      //userID = storageService.get(storageKey).id;
-      user = storageService.get(storageKey);
-      if(user == "" || user == null || user == undefined){
-        $state.go("menu.login");
-      }else{
-        cargoService.getList(user.id).then(function(data){
-          _this.showloading = false;
-          _this.cargos = data.cargos;
-        },function(err){
-          console.log(err);
-        });
-      }
+    cargoService.getList(user.id).then(function(data){
+      _this.showloading = false;
+      _this.cargos = data.cargos;
+    },function(err){
+      console.log(err);
     });
+
+    //$scope.$on("$ionicView.beforeEnter", function(event, data){
+    //  // handle event
+    //  //userID = storageService.get(storageKey).id;
+    //  user = storageService.get(storageKey);
+    //  if(user == "" || user == null || user == undefined){
+    //    $state.go("menu.login");
+    //  }else{
+    //    cargoService.getList(user.id).then(function(data){
+    //      _this.showloading = false;
+    //      _this.cargos = data.cargos;
+    //    },function(err){
+    //      console.log(err);
+    //    });
+    //  }
+    //});
   }
 
   return cargoListCtrl;

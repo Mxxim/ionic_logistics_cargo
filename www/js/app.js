@@ -15,7 +15,7 @@ define([
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 
-  function run($ionicPlatform) {
+  function run($ionicPlatform,$rootScope,$state,storageService) {
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -28,6 +28,22 @@ define([
         // org.apache.cordova.statusbar required
         StatusBar.styleDefault();
       }
+      var needLoginView = ["menu.tabs.order","menu.tabs.cargoList","menu.tabs.message"];//需要登录的页面state
+      var us = storageService.get("user");
+      if(us != undefined){
+        $rootScope.isLogin = true;
+        $rootScope.userInfo =us;
+      }else{
+        $rootScope.isLogin = false
+      }
+      $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams, options){
+        if(needLoginView.indexOf(toState.name)>=0 && !$rootScope.isLogin){//判断当前是否登录
+          $state.go("menu.tabs.login");//跳转到登录页
+          event.preventDefault(); //阻止默认事件，即原本页面的加载
+        }
+      })
+
+
       ////启动极光推送服务
       //window.plugins.jPushPlugin.init();
       ////调试模式
@@ -139,10 +155,10 @@ define([
           }
         }
       })
-      .state('menu.cargoList', {
+      .state('menu.tabs.cargoList', {
         url: '/cargoList',
         views: {
-          'menuContent': {
+          'tab-cargo': {
             templateUrl: 'templates/cargo/cargoList.html',
             controller:'CargoListCtrl',
             controllerAs:'cargoList'
@@ -184,40 +200,40 @@ define([
         }
       })
 
-      .state('menu.login', {
+      .state('menu.tabs.login', {
         url: '/login',
         views: {
-          'menuContent': {
+          'tab-cargo': {
             templateUrl: 'templates/user/login.html',
             controller:'UserCtrl',
             controllerAs:'user'
           }
         }
       })
-      .state('menu.register', {
+      .state('menu.tabs.register', {
         url: '/register',
         views: {
-          'menuContent': {
+          'tab-cargo': {
             templateUrl: 'templates/user/register.html',
             controller:'UserCtrl',
             controllerAs:'user'
           }
         }
       })
-      .state('menu.authentication', {
+      .state('menu.tabs.authentication', {
         url: '/authentication',
         views: {
-          'menuContent': {
+          'tab-cargo': {
             templateUrl: 'templates/user/authentication.html',
             controller:'UserCtrl',
             controllerAs:'user'
           }
         }
       })
-      .state('menu.settings', {
+      .state('menu.tabs.settings', {
         url: '/settings',
         views: {
-          'menuContent': {
+          'tab-cargo': {
             templateUrl: 'templates/user/settings.html',
             controller:'UserCtrl',
             controllerAs:'user' // 控制器与$scope绑定，在页面中不再使用{{someObject}} ，而是用{{cargo.someObject}},控制器内用this代替$scope
