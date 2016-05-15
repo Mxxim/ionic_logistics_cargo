@@ -347,7 +347,7 @@
   margin: 0 10px;font-size:0.85rem;color:#9C9898;
 }
 .order_list .item_detail{
-  border-top: 1px solid #dddddd;display: flex;flex-direction: row-reverse;padding: 15px 10px;
+  border-top: 1px solid #dddddd;display: flex;flex-direction: row-reverse;padding: 15px 10px;justify-content: space-between
 }
 .order_list .item_detail.padding{
   border-top:none;

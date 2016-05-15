@@ -6,5 +6,6 @@ define(function(require){
   //controllers.controller('controller名字',require(对应的文件地址));
   services.factory('cargoService',require('services/cargoService'));
   services.factory('userService',require('services/userService'));
+  services.factory('orderService',require('services/orderService'));
   return services;
 });
