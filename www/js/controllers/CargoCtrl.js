@@ -12,7 +12,7 @@
 
 define([],function(){
   'use strict';
-  function cargoCtrl($scope,$rootScope,$ionicLoading,$ionicPopup,$timeout,$state,storageService,ENV ){
+  function cargoCtrl($scope,$rootScope,$ionicLoading,$ionicPopup,$timeout,$state,storageService ){
 
     console.log("---------------enter cargoCtrl------------------");
     $scope.$on('$destroy',function(){
@@ -37,7 +37,6 @@ define([],function(){
                         '半挂车','商品运输车','挂车','爬梯车','可拼车','低栏车','半挂一拖二','半挂一拖三','半挂二拖二','半挂二拖三','前四后四','前四后六',
                         '前四后八','前四后十','五轮车','后八轮','罐式车','自卸车','棉被车','其他'];
 
-    $rootScope.api = ENV.api;
     //*********提交的数据**************
     var postData = {};
 

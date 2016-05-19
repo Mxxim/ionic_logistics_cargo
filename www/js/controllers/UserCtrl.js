@@ -37,6 +37,7 @@ define([],function(){
             storageService.set(storageKey,res.user);
             $rootScope.userInfo = res.user;
             $rootScope.isLogin = true;
+            window.plugins.jPushPlugin.setAlias(res.user.id+"");   // 最好把这个插件的相关操作封装为一个服务
             $state.go('menu.tabs.cargo');  //路由跳转
           }
 

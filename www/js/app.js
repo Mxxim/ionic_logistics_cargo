@@ -15,7 +15,7 @@ define([
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 
-  function run($ionicPlatform,$rootScope,$state,storageService) {
+  function run($ionicPlatform,$rootScope,$state,storageService,ENV) {
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -43,18 +43,28 @@ define([
         }
       })
 
+      $rootScope.api = ENV.api;
 
-      ////启动极光推送服务
-      //window.plugins.jPushPlugin.init();
-      ////调试模式
-      //window.plugins.jPushPlugin.setDebugMode(true);
-      ////接收消息并跳转相应的页面
-      //window.plugins.jPushPlugin.openNotificationInAndroidCallback = function (data) {
-      //  var obj = JSON.parse(data);
-      //  console.log(obj);
-      //  var id = obj.extras['cn.jpush.android.EXTRA'].id;
-      //  $state.go('appealDetail', {appealid: id});
-      //}
+      //启动极光推送服务
+      window.plugins.jPushPlugin.init();
+      //调试模式
+      window.plugins.jPushPlugin.setDebugMode(true);
+      //接收消息并跳转相应的页面
+      window.plugins.jPushPlugin.openNotificationInAndroidCallback = function (data) {
+
+        try {
+          console.log("openNotificationInAndroidCallback");
+          data = JSON.stringify(data);
+          var bToObj = JSON.parse(data);
+          $state.go('menu.tabs.order');
+          //var id = bToObj.extras['cn.jpush.android.EXTRA'].cid;
+          //$state.go('menu.tabs.cargoDetail', {cid: id});
+          //console.log("id = "+id);
+        } catch(exception) {
+          console.log(exception);
+        }
+      }
+
     });
   }
 
