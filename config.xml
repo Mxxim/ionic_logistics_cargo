@@ -53,7 +53,8 @@
         <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
     </platform>
-    <preference name="xwalkVersion" value="xwalk_core_library_beta:18+" />
+    <preference name="xwalkVersion" value="xwalk_core_library_beta:18.48.477.11"/>
+    <!--<preference name="xwalkVersion" value="xwalk_core_library_beta:18+" />-->
     <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect" />
     <preference name="xwalkMode" value="embedded" />
     <preference name="xwalkMultipleApk" value="true" />

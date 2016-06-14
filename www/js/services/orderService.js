@@ -38,6 +38,34 @@ define([],function(){
       });
     };
 
+    var cancel = function(oid){
+      return $q(function(resolve,reject){
+        $resource(ENV.api+ENV.interface.cancelOrder, {}, {
+          cancel: {
+            method: 'post'
+          }
+        }).cancel({
+          oid:oid
+        },function(res){
+          resolve(res);
+        });
+      });
+    }
+
+    var confirm = function(oid){
+      return $q(function(resolve,reject){
+        $resource(ENV.api+ENV.interface.confirmOrder, {}, {
+          ok: {
+            method: 'post'
+          }
+        }).ok({
+          oid:oid
+        },function(res){
+          resolve(res);
+        });
+      });
+    }
+
     //var getById = function(cid){
     //  return $q(function(resolve,reject){
     //
@@ -68,7 +96,9 @@ define([],function(){
 
     return{
       getList:getList,
-      add:add
+      add:add,
+      cancel:cancel,
+      confirm:confirm
     }
   }
 

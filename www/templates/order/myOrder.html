@@ -36,7 +36,7 @@
                     </div>
                     <div class="timeline-thumb bg-color-blue timeline-point"></div>
                     <div class="timeline-item">
-                      <h5 class="assertive">收 ￥{{order.cargo.price}} 元</h5>
+                      <h5 class="assertive">支出 ￥{{order.cargo.price}} 元</h5>
                       <p>
                         <i class="iconfont">&#xe60a;</i>
                         {{order.cargo.from}}
@@ -47,7 +47,7 @@
                       </p>
                       <div class="timeline-stats">
                         <i class="iconfont">&#xe60f;</i> {{order.cargo.name}} {{order.cargo.load}}吨&nbsp;<i class="ion-ios-clock"></i> {{order.cargo.dateTime}}
-                        <span class="pos-absolute-right">货主电话：{{order.driver_user.username}}</span>
+                        <span class="pos-absolute-right">车主电话：{{order.driver_user.username}}</span>
                       </div>
                       <div class="timeline-stats">
                         创建时间：{{order.createTime}}
@@ -291,8 +291,8 @@
 
               </div>
               <div class="item flex_row_reverse">
-                <button class="button button-outline button-positive button-small">查看物流</button>
-                <button class="button button-outline button-assertive button-small" >申请退单</button>
+                <button class="button button-outline button-positive button-small" ng-click="order.confirm(o._id)">确认收货</button>
+                <button class="button button-outline button-assertive button-small" ng-click="order.cancel(o._id)">申请退单</button>
               </div>
             </div>
           </div>
@@ -300,87 +300,87 @@
       </ion-view>
     </ion-tab>
 
-    <ion-tab title="待交易">
-      <ion-view>
-        <ion-content style="top: 95px;">
-          <div class="list card order_list" ng-click="order.toDetail()">
-            <div class="item">
-              <span class="dark-bg light">
-                2016-04-18 装
-              </span>
-              <span class="detail">饮料 25吨</span>
-            </div>
-            <div class="item_wrap">
-              <div class="item">
-                <p>
-                  <i class="iconfont balanced">&#xe60a;</i>
-                  <span>湛江市麻章区湖光岩东广东海洋大学</span>
-                </p>
-              </div>
-              <div class="item">
-                <i class="iconfont">&#xe61b;</i>
-              </div>
-              <div class="item">
-                <p>
-                  <i class="iconfont assertive">&#xe60b;</i>
-                  <span>广州市越秀区广东外语外贸大学</span>
-                </p>
-              </div>
-            </div>
-
-            <div class="item item_detail padding">
-              <span>￥1300</span>
-              <span class="detail">17.5米 平板车</span>
-            </div>
-            <div class="item item_detail">
-              <span class="assertive">取消理由：临时变更</span>
-            </div>
-            <!--<div class="item flex_row_reverse">-->
-            <!--<button class="button button-outline button-positive button-small">查看物流</button>-->
-            <!--<button class="button button-outline button-assertive button-small" >申请退单</button>-->
+    <!--<ion-tab title="待交易">-->
+      <!--<ion-view>-->
+        <!--<ion-content style="top: 95px;">-->
+          <!--<div class="list card order_list" ng-click="order.toDetail()">-->
+            <!--<div class="item">-->
+              <!--<span class="dark-bg light">-->
+                <!--2016-04-18 装-->
+              <!--</span>-->
+              <!--<span class="detail">饮料 25吨</span>-->
             <!--</div>-->
-          </div>
-
-          <div class="list card order_list" ng-click="order.toDetail()">
-            <div class="item">
-              <span class="dark-bg light">
-                2016-04-18 装
-              </span>
-              <span class="detail">饮料 25吨</span>
-            </div>
-            <div class="item_wrap">
-              <div class="item">
-                <p>
-                  <i class="iconfont balanced">&#xe60a;</i>
-                  <span>湛江市麻章区湖光岩东广东海洋大学</span>
-                </p>
-              </div>
-              <div class="item">
-                <i class="iconfont">&#xe61b;</i>
-              </div>
-              <div class="item">
-                <p>
-                  <i class="iconfont assertive">&#xe60b;</i>
-                  <span>广州市越秀区广东外语外贸大学</span>
-                </p>
-              </div>
-            </div>
-
-            <div class="item item_detail padding">
-              <span>￥1300</span>
-              <span class="detail">17.5米 平板车</span>
-            </div>
-            <div class="item item_detail">
-              <span class="assertive">取消理由：临时变更</span>
-            </div>
-            <!--<div class="item flex_row_reverse">-->
-            <!--<button class="button button-outline button-positive button-small">查看物流</button>-->
-            <!--<button class="button button-outline button-assertive button-small" >申请退单</button>-->
+            <!--<div class="item_wrap">-->
+              <!--<div class="item">-->
+                <!--<p>-->
+                  <!--<i class="iconfont balanced">&#xe60a;</i>-->
+                  <!--<span>湛江市麻章区湖光岩东广东海洋大学</span>-->
+                <!--</p>-->
+              <!--</div>-->
+              <!--<div class="item">-->
+                <!--<i class="iconfont">&#xe61b;</i>-->
+              <!--</div>-->
+              <!--<div class="item">-->
+                <!--<p>-->
+                  <!--<i class="iconfont assertive">&#xe60b;</i>-->
+                  <!--<span>广州市越秀区广东外语外贸大学</span>-->
+                <!--</p>-->
+              <!--</div>-->
             <!--</div>-->
-          </div>
-        </ion-content>
-      </ion-view>
-    </ion-tab>
+
+            <!--<div class="item item_detail padding">-->
+              <!--<span>￥1300</span>-->
+              <!--<span class="detail">17.5米 平板车</span>-->
+            <!--</div>-->
+            <!--<div class="item item_detail">-->
+              <!--<span class="assertive">取消理由：临时变更</span>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<div class="item flex_row_reverse">&ndash;&gt;-->
+            <!--&lt;!&ndash;<button class="button button-outline button-positive button-small">查看物流</button>&ndash;&gt;-->
+            <!--&lt;!&ndash;<button class="button button-outline button-assertive button-small" >申请退单</button>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--</div>-->
+
+          <!--<div class="list card order_list" ng-click="order.toDetail()">-->
+            <!--<div class="item">-->
+              <!--<span class="dark-bg light">-->
+                <!--2016-04-18 装-->
+              <!--</span>-->
+              <!--<span class="detail">饮料 25吨</span>-->
+            <!--</div>-->
+            <!--<div class="item_wrap">-->
+              <!--<div class="item">-->
+                <!--<p>-->
+                  <!--<i class="iconfont balanced">&#xe60a;</i>-->
+                  <!--<span>湛江市麻章区湖光岩东广东海洋大学</span>-->
+                <!--</p>-->
+              <!--</div>-->
+              <!--<div class="item">-->
+                <!--<i class="iconfont">&#xe61b;</i>-->
+              <!--</div>-->
+              <!--<div class="item">-->
+                <!--<p>-->
+                  <!--<i class="iconfont assertive">&#xe60b;</i>-->
+                  <!--<span>广州市越秀区广东外语外贸大学</span>-->
+                <!--</p>-->
+              <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="item item_detail padding">-->
+              <!--<span>￥1300</span>-->
+              <!--<span class="detail">17.5米 平板车</span>-->
+            <!--</div>-->
+            <!--<div class="item item_detail">-->
+              <!--<span class="assertive">取消理由：临时变更</span>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<div class="item flex_row_reverse">&ndash;&gt;-->
+            <!--&lt;!&ndash;<button class="button button-outline button-positive button-small">查看物流</button>&ndash;&gt;-->
+            <!--&lt;!&ndash;<button class="button button-outline button-assertive button-small" >申请退单</button>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--</div>-->
+        <!--</ion-content>-->
+      <!--</ion-view>-->
+    <!--</ion-tab>-->
 
     <ion-tab title="已取消" ng-click="order.canceled()">
       <ion-view>
@@ -392,18 +392,18 @@
             <div class="col text-center padding" style="color: #a3a3a3;"><i class="iconfont">&#xe61a;&nbsp;</i>您没有已取消的运单哦...</div>
           </div>
           <div ng-if="!order.showloading && order.canceledList.length != 0">
-            <div class="list card order_list" ng-click="order.toDetail()">
+            <div class="list card order_list" ng-repeat="o in order.canceledList">
               <div class="item">
               <span class="dark-bg light">
-                2016-04-18 装
+                {{o.cargo.dateTime}} 装
               </span>
-                <span class="detail">饮料 25吨</span>
+                <span class="detail">{{o.cargo.name}} {{o.cargo.load}}吨</span>
               </div>
               <div class="item_wrap">
                 <div class="item">
                   <p>
                     <i class="iconfont balanced">&#xe60a;</i>
-                    <span>湛江市麻章区湖光岩东广东海洋大学</span>
+                    <span>{{o.cargo.from}}</span>
                   </p>
                 </div>
                 <div class="item">
@@ -412,14 +412,14 @@
                 <div class="item">
                   <p>
                     <i class="iconfont assertive">&#xe60b;</i>
-                    <span>广州市越秀区广东外语外贸大学</span>
+                    <span>{{o.cargo.to}}</span>
                   </p>
                 </div>
               </div>
 
               <div class="item item_detail padding">
-                <span>￥1300</span>
-                <span class="detail">17.5米 平板车</span>
+                <span>￥{{o.cargo.price}}</span>
+                <span class="detail">{{o.cargo.lorryLength}}米 {{o.cargo.lorryType}}</span>
               </div>
               <div class="item item_detail">
                 <span class="assertive">取消理由：临时变更</span>

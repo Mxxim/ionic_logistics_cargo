@@ -66,10 +66,25 @@ define([],function(){
       });
     }
 
+    function deleteCargoInfo(cid){
+      return $q(function(resolve,reject){
+        $resource(ENV.api+ENV.interface.cargoDelete,{},{
+          del : {
+            method:"POST"
+          }
+        }).del({
+          cid:cid
+        }, function(response) {
+          resolve(response);
+        });
+      });
+    }
+
     return {
       addCargo:add,
       getPrice:getPrice,
-      getList:getList
+      getList:getList,
+      deleteCargoInfo:deleteCargoInfo
     };
 
   }

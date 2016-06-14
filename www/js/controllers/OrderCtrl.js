@@ -4,7 +4,7 @@
 
 define([],function(){
   'use strict';
-  function orderCtrl($scope,$rootScope,$state,$timeout,$ionicTabsDelegate,storageService,orderService ){
+  function orderCtrl($scope,$rootScope,$state,$timeout,$ionicTabsDelegate,$ionicPopup,storageService,orderService ){
 
     console.log("---------------enter orderCtrl------------------");
     $scope.$on('$destroy',function(){
@@ -15,6 +15,7 @@ define([],function(){
     var user = storageService.get(storageKey);
     var _this = this;
     _this.orders = [];
+    _this.deliveryList = [];
     _this.showloading = true;
 
     $rootScope.hideTabs = ' ';
@@ -87,7 +88,6 @@ define([],function(){
 
     // 配送中
     _this.delivery = function(){
-      _this.deliveryList = [];
       _this.showloading = true;
 
       $ionicTabsDelegate.$getByHandle('my-handle').select(1);
@@ -108,7 +108,7 @@ define([],function(){
       _this.canceledList = [];
       _this.showloading = true;
 
-      $ionicTabsDelegate.$getByHandle('my-handle').select(3);
+      $ionicTabsDelegate.$getByHandle('my-handle').select(2);
       listByType(0,function(orders){
         _this.canceledList = orders;
         var timer = $timeout(
@@ -118,6 +118,89 @@ define([],function(){
           },
           500
         );
+      });
+    }
+
+    // A confirm dialog
+    var showConfirm = function(str,callback) {
+      var confirmPopup = $ionicPopup.confirm({
+        title: '提示信息',
+        template: str,
+        cancelText:"取消",
+        okText:"确定"
+      });
+
+      confirmPopup.then(function(res) {
+        if(res) {
+          callback();
+        } else {
+          console.log('You are not sure');
+        }
+      });
+    };
+
+    // An alert dialog
+    var showAlert = function(str) {
+      var alertPopup = $ionicPopup.alert({
+        title: '提示信息',
+        template: str
+      });
+
+      alertPopup.then(function(res) {
+        console.log('Thank you for not eating my delicious ice cream cone');
+      });
+    };
+
+    // 申请退单
+    _this.cancel = function(id){
+      showConfirm("是否确定取消运单？",function(){   // 由于没有做后台管理系统，这里假设点击确定以后，运单就被取消了。
+        orderService.cancel(id).then(function(res){
+          if(res.code == 1){
+            showAlert("您的运单已取消");
+            listByType(1,function(orders){
+              _this.deliveryList = orders;
+              _this.showloading = true;
+              var timer = $timeout(
+                function() {
+                  _this.showloading = false;
+                  $timeout.cancel(timer);
+                },
+                500
+              );
+            });
+          }else{
+            showAlert("操作失败！");
+          }
+
+        },function(err){
+          console.log(err);
+        });
+
+      });
+    }
+
+    // 确认收货
+    _this.confirm = function(id){
+      showConfirm("是否确定收货？",function(){
+        orderService.confirm(id).then(function(res){
+          if(res.code != 1){
+            showAlert("操作失败！");
+          }else{
+            listByType(1,function(orders){
+              _this.deliveryList = orders;
+              _this.showloading = true;
+              var timer = $timeout(
+                function() {
+                  _this.showloading = false;
+                  $timeout.cancel(timer);
+                },
+                500
+              );
+            });
+          }
+        },function(err){
+          console.log(err);
+        });
       });
     }
 
