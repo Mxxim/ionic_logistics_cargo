@@ -22,7 +22,7 @@
 [物流配货系统服务端戳这里！！][]
 
 使用到的关键技术有如下：
-- **ionic** - HTML5框架，可以帮助快速打造界面优美的app，基于**AngularJS**与**Cordova**，详细教程参见[ionic官网][]
+- **ionic** - HTML5框架，可以帮助快速打造界面优美的app，基于**AngularJS**与**Cordova**，详细教程参见[ionic官网][]。
 - **CrossWalk** - 用于提升性能。
 - 相机拍照。
 - 上传图片到服务端。
