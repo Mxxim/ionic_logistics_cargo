@@ -1,6 +1,6 @@
 #用Ionic开发的物流配货App
 
-&emsp;本项目的需求还不是特别完整，并不是一个完成的项目，其主要目的还只是用于学习，适合给想用Ionic做项目的同学做参考。编码方面还有很多地方需要改善，如果您能献上宝贵的建议，不甚感激！
+&emsp;本项目的需求还不是特别完整，并不是一个完整的项目，其主要目的还只是用于学习，适合给想用Ionic做项目的同学做参考。编码方面还有很多地方需要改善，如果您能献上宝贵的建议，不甚感激！
 
 ## 简介
 
@@ -8,7 +8,7 @@
 
 [物流配货车主端Hybrid App][]主要的功能有：<br/>
 1、用户注册、登录，用户上传个人照片。<br/>
-2、首页会定位到车主当前城市，然后显示出当前城市的所有货源列表。<br/>
+2、首页会定位到车主当前城市，然后显示出发地为当前城市的所有货源列表。<br/>
 3、搜索货源。（模糊查询）<br/>
 4、车主可以对货源进行抢单，抢单操作完成后生成运单。并且服务端会推送一条类似【已有车主接了您的货源】的通知给货主。<br/>
 5、添加车辆。<br/>
@@ -19,6 +19,7 @@
 2、发布货源，系统会将该货源与系统中未交易的车源进行匹配，然后推送一条类似【您收到一条新的货源】的通知给多个符合条件的车源的车主。<br/>
 3、查看运单。<br/>
 
+[物流配货系统服务端戳这里！！][]
 
 使用到的关键技术有如下：
 - **ionic** - HTML5框架，可以帮助快速打造界面优美的app，基于**AngularJS**与**Cordova**，详细教程参见[ionic官网][]
@@ -87,9 +88,13 @@ sourceSets {
 ```
 Crosswalk官网地址：<https://crosswalk-project.org/>
 
+**注意：运行之前要先开启MongoDB服务，将用NodeJS写的服务端跑起来，然后修改www/js/config.js文件中的api为你本机的IP地址，服务端代码地址戳这里：<https://github.com/Mxxim/nodejs_logistics>**<br/>
+**刚开始数据库中没有数据，所以看不到什么效果，如果想要看效果图，可以移步本人博客：<http://www.cnblogs.com/mxxim/p/5584821.html>**<br/>
+**测试机：酷派f2全网通（Android4.4）；华为荣耀3C（Android4.2）**
 
 [物流配货车主端Hybrid App]: https://github.com/Mxxim/ionic_logistics "GitHub地址"
 [物流配货货主端Hybrid App]: https://github.com/Mxxim/ionic_logistics_cargo "GitHub地址"
+[物流配货系统服务端戳这里！！]:https://github.com/Mxxim/nodejs_logistics "GitHub地址"
 [ionic官网]: http://ionicframework.com/docs/ "ionic官网"
 [百度定位SDK]: http://lbsyun.baidu.com/index.php?title=android-locsdk/guide/buildprojec  "百度定位SDK官网"
 
