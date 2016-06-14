@@ -8,12 +8,8 @@ angular.module('starter.config',[])
 
     .constant('ENV',{
         "debug" : false,
-      //"api": "http://10.8.210.28:3000",
-      //"api": "http://192.168.43.55:3000",
-      "api": "http://172.20.10.5:3000",
-        'siteUrl':"http://www.phonegap100.com",
-        //'imgUrl':"http://www.phonegap100.com/data/attachment/",
-        'imgUrl':"http://192.168.31.156:3000/data/image/",
+      "api": "http://192.168.31.156:3000",
+        //'imgUrl':"http://192.168.31.156:3000/data/image/",
         'version':'1.0.1',
         'interface':{
           signin:'/user/signin',
